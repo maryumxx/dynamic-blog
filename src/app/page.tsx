@@ -41,6 +41,8 @@ export default function Home() {
       <div>
         <video
           autoPlay
+          preload="metadata"
+          poster="mountains.jpg"
           loop
           muted
           className="h-[500px] w-screen object-cover"

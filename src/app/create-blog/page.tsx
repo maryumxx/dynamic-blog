@@ -56,6 +56,8 @@ const CreateBlog = () => {
       <Header/>
       <video
           autoPlay
+          poster='green.jpg'
+          preload='metadata'
           loop
           muted
           className="md:hidden h-[400px] sticky w-screen object-cover"
@@ -123,6 +125,8 @@ const CreateBlog = () => {
     <div>
     <video
           autoPlay
+          poster='hiking.jpg'
+          preload='metadata'
           loop
           muted
           className=" hidden md:block h-[1100px] sticky w-[800px] object-cover"
