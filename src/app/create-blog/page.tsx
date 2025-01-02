@@ -7,40 +7,7 @@ const CreateBlog = () => {
   const [description, setDescription] = useState('');
   const [initial, setInitial] = useState('');
   const [author, setAuthor] = useState('');
-  const [image, setImage] = useState<File | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  // Function to handle image selection
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
-  };
-
-  // Function to upload image and get URL
-  const uploadImage = async (file: File): Promise<string | null> => {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        return data.imageUrl; // Assuming the API returns the image URL
-      } else {
-        console.error('Image upload failed');
-        return null;
-      }
-    } catch (error) {
-      console.error('Error during image upload:', error);
-      return null;
-    }
-  };
 
   // Function to handle blog submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -51,24 +18,11 @@ const CreateBlog = () => {
       return;
     }
 
-    let imageUrl = null;
-    if (image) {
-      setIsUploading(true);
-      imageUrl = await uploadImage(image); // Upload image and get its URL
-      setIsUploading(false);
-
-      if (!imageUrl) {
-        alert('Failed to upload image. Please try again.');
-        return;
-      }
-    }
-
     const blogData = {
       title,
       description,
-      image: imageUrl,
       initial,
-      author
+      author,
     };
 
     try {
@@ -81,12 +35,11 @@ const CreateBlog = () => {
       if (response.ok) {
         alert('Blog posted successfully!');
         console.log('Posted blog:', blogData);
-        // Reset the form
+        
         setTitle('');
         setDescription('');
-        setImage(null);
         setInitial('');
-        setAuthor('')
+        setAuthor('');
       } else {
         const result = await response.json();
         alert(result.error || 'Something went wrong!');
@@ -95,7 +48,8 @@ const CreateBlog = () => {
       console.error('Error posting blog:', error);
       alert('Error posting blog.');
     }
-  };
+  }; 
+
 
   return (
     <main>

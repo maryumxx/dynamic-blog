@@ -14,13 +14,7 @@ export default function AllBlogs() {
     }>
   >([]);
 
-  const App = () => {
-    const [showComments, setShowComments] = useState(false);
-
-    const toggleComments = () => {
-      setShowComments((prev) => !prev); // Toggle visibility
-    };
-  };
+ 
 
   // Fetch blogs from the API
   useEffect(() => {

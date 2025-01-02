@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // In-memory storage for simplicity (for now)
-let blogs: Array<{ title: string; description: string; image?: string; initial: string; author:string }> = [];
+const blogs: Array<{ title: string; description: string; image?: string; initial: string; author:string }> = [];
 
 export async function POST(request: Request) {
     try {
