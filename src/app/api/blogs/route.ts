@@ -26,8 +26,8 @@ export async function POST(request: Request) {
       blogs.push(newBlog);
   
       return NextResponse.json({ message: 'Blog created successfully!', blog: newBlog });
-    } catch (error) {
-      return NextResponse.json({ error: 'Failed to create blog.' }, { status: 500 });
+    } catch {
+      return NextResponse.json({ message: 'Failed to create blog' }, { status: 500 });
     }
   }
   
