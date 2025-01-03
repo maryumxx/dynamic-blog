@@ -39,15 +39,8 @@ export default function Home() {
       <Header />
       {/* Hero Section */}
       <div>
-        <video
-          autoPlay
-          preload="metadata"
-          poster="mountains.jpg"
-          loop
-          muted
-          className="h-[500px] w-screen object-cover"
-          src="landscape.mp4"
-        ></video>
+        <img className="h-[500px] w-screen object-cover" src="home.jpg" alt="" />
+       
         <div>
           <div className="flex items-center absolute top-[270px] left-[75px]">
             <img className="w-28 -mt-24 -ml-16 md:m-0" src="m.png" alt="Logo" />
@@ -55,7 +48,7 @@ export default function Home() {
               - MARYAM
             </p>
           </div>
-          <h1 className="md:text-[72px] text-[50px] -mt-[360px] ml-10 md:m-0 font-medium font-['Poppins'] text-white absolute md:top-[410px] md:left-[100px]">
+          <h1 className="md:text-[72px] text-[40px] -mt-[360px] ml-10 md:m-0 font-medium font-['Poppins'] text-white absolute md:top-[410px] md:left-[100px]">
             Not all who wander are lost
           </h1>
           <p className="absolute -mt-[220px] ml-12 md:m-0 md:top-[510px] text-white text-[12px] font-bold md:left-[105px] ">

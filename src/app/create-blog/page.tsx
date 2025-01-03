@@ -123,15 +123,8 @@ const CreateBlog = () => {
 
     {/* Side Video */}
     <div>
-    <video
-          autoPlay
-          poster='hiking.jpg'
-          preload='metadata'
-          loop
-          muted
-          className=" hidden md:block h-[1100px] sticky w-[800px] object-cover"
-          src="createblogvideo.mp4"
-        ></video>
+      <img className=" hidden md:block h-[1100px] sticky w-[800px] object-cover" src="road.jpg" alt="" />
+
     </div>
     </div>
     </main>
